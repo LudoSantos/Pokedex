@@ -8,9 +8,10 @@ public class Pokemon {
     private int level;
     private float altura;
     private float peso;
-    private Pokemon evoluçao1 = null, evoluçao2;
+    private Pokemon evoluçao1 = null, evoluçao2 = null;
     private Scanner scan = new Scanner(System.in);
     private int id;
+    private Estatisticas status = new Estatisticas(0, 0, 0, 0, 0, 0, null);
 
     public float getAltura() {
         return altura;
@@ -115,11 +116,18 @@ public class Pokemon {
         this.id = id;
     }
 
-    public Pokemon(String nome, int level, float altura, float peso) {
+    public Pokemon(String nome, int level, float altura, float peso, Estatisticas status) {
         this.nome = nome;
         setLevel(level);
         setAltura(altura);
         setPeso(peso);
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso + "\nevoluçao1 = "
+                + evoluçao1 + "\nevoluçao2 = " + evoluçao2 + "\nid = " + id + "\nEstatus = " + status;
     }
 
     
