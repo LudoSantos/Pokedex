@@ -8,7 +8,7 @@ public class Pokemon {
     private int level;
     private float altura;
     private float peso;
-    private Pokemon evoluçao1, evoluçao2;
+    private Pokemon evoluçao1 = null, evoluçao2;
     private Scanner scan = new Scanner(System.in);
     private int id;
 
