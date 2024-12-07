@@ -11,14 +11,14 @@ public class Estatisticas {
     private int Ataque = 0;
     private int Velocidade = 0;
     private String DexEntry = null;
+    Scanner scan = new Scanner(System.in);
 
     public int getPontosDeVida() {
         return PontosDeVida;
     }
 
     public void setPontosDeVida(int pontosDeVida) {
-        int i = 2;
-        Scanner scan = new Scanner(System.in);
+        int i = 0;
         if (pontosDeVida > 0 && pontosDeVida <= 200)
             PontosDeVida = pontosDeVida;
         else {
@@ -34,6 +34,7 @@ public class Estatisticas {
                     System.out.println("O valor deve ser maior que 0 e menor que 200.");
                     System.out.println("Insira os pontos de vida do pokemon:");
                     pontosDeVida = scan.nextInt();
+                    scan.nextLine();
                 }
             }
         }
@@ -45,7 +46,6 @@ public class Estatisticas {
 
     public void setDefesaEspecial(int defesaEspecial) {
         int i = 0;
-        Scanner scan = new Scanner(System.in);
         if (defesaEspecial > 0 && defesaEspecial <= 200)
             DefesaEspecial = defesaEspecial;
         else {
@@ -61,6 +61,7 @@ public class Estatisticas {
                     System.out.println("O valor deve ser maior que 0 e menor que 200.");
                     System.out.println("Insira os pontos de defesa especial do pokemon:");
                     defesaEspecial = scan.nextInt();
+                    scan.nextLine();
                 }
             }
         }
@@ -70,11 +71,11 @@ public class Estatisticas {
         return Defesa;
     }
 
-    public void setDefesa(int defesa) {
+    public void setDefesa( int defesa ) {
         int i = 0;
-        Scanner scan = new Scanner(System.in);
-        if (defesa > 0 && defesa <= 200)
-            Defesa = defesa;
+        if (defesa > 0 && defesa <= 200){
+            Defesa = defesa; 
+        }
         else {
             while (i != 1) {
 
@@ -88,6 +89,7 @@ public class Estatisticas {
                     System.out.println("O valor deve ser maior que 0 e menor que 200.");
                     System.out.println("Insira os pontos de defesa do pokemon:");
                     defesa = scan.nextInt();
+                    scan.nextLine();
                 }
             }
         }
@@ -99,7 +101,6 @@ public class Estatisticas {
 
     public void setAtaque(int ataque) {
         int i = 0;
-        Scanner scan = new Scanner(System.in);
         if (ataque > 0 && ataque <= 200)
             Ataque = ataque;
         else {
@@ -115,6 +116,7 @@ public class Estatisticas {
                     System.out.println("O valor deve ser maior que 0 e menor que 200.");
                     System.out.println("Insira os pontos de ataque do pokemon:");
                     ataque = scan.nextInt();
+                    scan.nextLine();
                 }
             }
         }
@@ -126,7 +128,6 @@ public class Estatisticas {
 
     public void setVelocidade(int velocidade) {
         int i = 0;
-        Scanner scan = new Scanner(System.in);
         if (velocidade > 0 && velocidade <= 200)
             Velocidade = velocidade;
         else {
@@ -142,6 +143,7 @@ public class Estatisticas {
                     System.out.println("O valor deve ser maior que 0 e menor que 200.");
                     System.out.println("Insira os pontos de velocidade do pokemon:");
                     velocidade = scan.nextInt();
+                    scan.nextLine();
                 }
             }
         }
@@ -153,7 +155,6 @@ public class Estatisticas {
 
     public void setAtaqueEspecial(int ataqueEspecial) {
         int i = 0;
-        Scanner scan = new Scanner(System.in);
         if (ataqueEspecial > 0 && ataqueEspecial <= 200)
             AtaqueEspecial = ataqueEspecial;
         else {
@@ -169,6 +170,7 @@ public class Estatisticas {
                     System.out.println("O valor deve ser maior que 0 e menor que 200.");
                     System.out.println("Insira os pontos de ataque especial do pokemon:");
                     ataqueEspecial = scan.nextInt();
+                    scan.nextLine();
                 }
             }
         }
