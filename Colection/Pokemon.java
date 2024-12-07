@@ -39,7 +39,7 @@ public class Pokemon {
     }
 
     public void adicionarEvoluçao2(Pokemon evoluçao) {
-        if (evoluçao.getLevel() > evoluçao1.getLevel() && evoluçao1.getLevel() != 0) {
+        if (evoluçao.getLevel() > evoluçao1.getLevel() && evoluçao1 != null) {
             evoluçao2 = evoluçao;
         } else {
             System.out.println("Level do pokemon abaixo da primeira evoluçao ou primeira evoluçao ainda nao criada");
