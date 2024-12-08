@@ -12,6 +12,7 @@ public class Pokemon {
     private Scanner scan = new Scanner(System.in);
     private int id;
     private Estatisticas status = new Estatisticas(0, 0, 0, 0, 0, 0, null);
+    private Tipos tipo = new Tipos(null, null);
 
     public float getAltura() {
         return altura;
@@ -116,12 +117,14 @@ public class Pokemon {
         this.id = id;
     }
 
-    public Pokemon(String nome, int level, float altura, float peso, Estatisticas status) {
+    public Pokemon(String nome, int level, float altura, float peso, int id, Estatisticas status, Tipos tipo) {
         this.nome = nome;
         setLevel(level);
         setAltura(altura);
         setPeso(peso);
+        this.id = id;
         this.status = status;
+        this.tipo = tipo;
     }
 
     public Pokemon(String nome, int level) {
@@ -132,19 +135,22 @@ public class Pokemon {
     @Override
     public String toString() {
         if (evoluçao1 == null) {
-            return "\nNome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso
-                    + "\nevoluçao1 = "
-                    + evoluçao1 + "\nevoluçao2 = " + evoluçao2 + "\nid = " + id + "\n" + status;
+            return "\nNome = " + nome + "\nLevel = " + level + "\naltura = " + altura + "\npeso = " + peso
+                    + "\nEvoluçao 1 = "
+                    + evoluçao1 + "\nEvoluçao 2 = " + evoluçao2 + "\nid = " + id + "\n" + status + "\nTipo 1 = "
+                    + tipo.getTipo1()
+                    + "\nTipo 2 = " + tipo.getTipo2();
         } else {
             if (evoluçao2 == null) {
-                return "\nNome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso
-                        + "\nevoluçao1 = "
-                        + evoluçao1.getNome() + "\nevoluçao2 = " + evoluçao2 + "\nid = " + id + "\n" + status;
+                return "\nNome = " + nome + "\nLevel = " + level + "\naltura = " + altura + "\npeso = " + peso
+                        + "\nEvoluçao 1 = "
+                        + evoluçao1.getNome() + "\nEvoluçao 2 = " + evoluçao2 + "\nid = " + id + "\n" + status
+                        + "\nTipo 1 = " + tipo.getTipo1() + "\nTipo 2 = " + tipo.getTipo2();
             } else {
-                return "\nNome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso
-                        + "\nevoluçao1 = "
-                        + evoluçao1.getNome() + "\nevoluçao2 = " + evoluçao2.getNome() + "\nid = " + id + "\n"
-                        + status;
+                return "\nNome = " + nome + "\nLevel = " + level + "\naltura = " + altura + "\npeso = " + peso
+                        + "\nEvoluçao 1 = "
+                        + evoluçao1.getNome() + "\nEvoluçao 2 = " + evoluçao2.getNome() + "\nid = " + id + "\n"
+                        + status + "\nTipo 1 = " + tipo.getTipo1() + "\nTipo 2 = " + tipo.getTipo2();
             }
         }
 
