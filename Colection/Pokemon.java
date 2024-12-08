@@ -141,18 +141,18 @@ public class Pokemon {
                     + "\nEvoluçao 1 = "
                     + evoluçao1 + "\nEvoluçao 2 = " + evoluçao2 + "\nid = " + id + "\n" + status + "\nTipo 1 = "
                     + tipo.getTipo1()
-                    + "\nTipo 2 = " + tipo.getTipo2();
+                    + "\nTipo 2 = " + tipo.getTipo2() + ataque ;
         } else {
             if (evoluçao2 == null) {
                 return "\nNome = " + nome + "\nLevel = " + level + "\naltura = " + altura + "\npeso = " + peso
                         + "\nEvoluçao 1 = "
                         + evoluçao1.getNome() + "\nEvoluçao 2 = " + evoluçao2 + "\nid = " + id + "\n" + status
-                        + "\nTipo 1 = " + tipo.getTipo1() + "\nTipo 2 = " + tipo.getTipo2();
+                        + "\nTipo 1 = " + tipo.getTipo1() + "\nTipo 2 = " + tipo.getTipo2() + ataque;
             } else {
                 return "\nNome = " + nome + "\nLevel = " + level + "\naltura = " + altura + "\npeso = " + peso
                         + "\nEvoluçao 1 = "
                         + evoluçao1.getNome() + "\nEvoluçao 2 = " + evoluçao2.getNome() + "\nid = " + id + "\n"
-                        + status + "\nTipo 1 = " + tipo.getTipo1() + "\nTipo 2 = " + tipo.getTipo2();
+                        + status + "\nTipo 1 = " + tipo.getTipo1() + "\nTipo 2 = " + tipo.getTipo2() + ataque;
             }
         }
 
