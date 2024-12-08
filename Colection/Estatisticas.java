@@ -189,7 +189,7 @@ public class Estatisticas {
 
     @Override
     public String toString() {
-        return "Estatisticas:\nPontos De Vida = " + pontosDeVida + "\nDefesa Especial = " + defesaEspecial
+        return "Pontos De Vida = " + pontosDeVida + "\nDefesa Especial = " + defesaEspecial
                 + "\nAtaque Especial = "
                 + ataqueEspecial + "\nDefesa = " + defesa + "\nAtaque = " + ataque + "\nVelocidade = " + velocidade
                 + "\nDex Entry = " + DexEntry;
