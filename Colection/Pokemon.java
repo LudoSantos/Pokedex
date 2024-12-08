@@ -73,7 +73,7 @@ public class Pokemon {
     public void setAltura(float altura) {
         int i = 0;
         Scanner scan = new Scanner(System.in);
-        if (altura > 0 && altura < 50 ) {
+        if (altura > 0 && altura < 50) {
             this.altura = altura;
         } else {
             while (i != 1) {
@@ -92,7 +92,7 @@ public class Pokemon {
     public void setPeso(float peso) {
         int i = 0;
         Scanner scan = new Scanner(System.in);
-        if (peso > 0 && peso < 1000 ) {
+        if (peso > 0 && peso < 1000) {
             this.peso = peso;
         } else {
             while (i != 1) {
@@ -124,11 +124,30 @@ public class Pokemon {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Nome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso + "\nevoluçao1 = "
-                + evoluçao1 + "\nevoluçao2 = " + evoluçao2 + "\nid = " + id + "\nEstatus = " + status;
+    public Pokemon(String nome, int level) {
+        this.nome = nome;
+        this.level = level;
     }
 
-    
+    @Override
+    public String toString() {
+        if (evoluçao1 == null) {
+            return "\nNome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso
+                    + "\nevoluçao1 = "
+                    + evoluçao1 + "\nevoluçao2 = " + evoluçao2 + "\nid = " + id + "\n" + status;
+        } else {
+            if (evoluçao2 == null) {
+                return "\nNome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso
+                        + "\nevoluçao1 = "
+                        + evoluçao1.getNome() + "\nevoluçao2 = " + evoluçao2 + "\nid = " + id + "\n" + status;
+            } else {
+                return "\nNome = " + nome + "\nlevel = " + level + "\naltura = " + altura + "\npeso = " + peso
+                        + "\nevoluçao1 = "
+                        + evoluçao1.getNome() + "\nevoluçao2 = " + evoluçao2.getNome() + "\nid = " + id + "\n"
+                        + status;
+            }
+        }
+
+    }
+
 }
