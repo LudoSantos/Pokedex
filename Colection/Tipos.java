@@ -417,17 +417,21 @@ public class Tipos{
                     }
                     for(int i=0; i<fraquezas.size(); i++){
                         for(int j=i+1; j<fraquezas.size(); j++){
-                            if(fraquezas.get(i).getNumero()==fraquezas.get(j).getNumero()){
+                            if(fraquezas.get(i).getTipo()==fraquezas.get(j).getTipo()){
                                 if (fraquezas.get(i).getNumero()<fraquezas.get(j).getNumero()) {
-                                    fraquezas.remove(j);
-                                    j--;
+                                    fraquezas.get(j).setTipo("Inválido");
+                                    fraquezas.get(j).setNumero(0);
+                                    fraquezas.get(j).setIdentificador(89);
+                                    if(fraquezas.get(i).getNumero()<=0) fraquezas.get(i).setNumero(fraquezas.get(i).getNumero()*0.5);
+                                    else fraquezas.get(i).setNumero(fraquezas.get(i).getNumero()*2);
                                 } else {
-                                    fraquezas.remove(i);
-                                    i--; 
+                                    fraquezas.get(i).setTipo("Inválido");
+                                    fraquezas.get(i).setNumero(0);
+                                    fraquezas.get(i).setIdentificador(89);
+                                    if(fraquezas.get(j).getNumero()<=0) fraquezas.get(j).setNumero(fraquezas.get(j).getNumero()*0.5);
+                                    else fraquezas.get(j).setNumero(fraquezas.get(j).getNumero()*2);
                                     break;
                                 }
-                                if(fraquezas.get(i).getNumero()<=0) fraquezas.get(i).setNumero(fraquezas.get(i).getNumero()*0.5);
-                                else fraquezas.get(i).setNumero(fraquezas.get(i).getNumero()*2);
                                 
                             }
                         }
@@ -435,9 +439,8 @@ public class Tipos{
                     
                     for(int i=0; i<vantagens.size(); i++){
                         for(int j=i+1; j<vantagens.size(); j++){
-                            if(vantagens.get(i).equals(vantagens.get(j))){
-                                vantagens.remove(j);
-                                j--;
+                            if(vantagens.get(i)==vantagens.get(j)){
+                                vantagens.set(j,"Inválido");
                             }
                         }
                     }
@@ -452,222 +455,81 @@ public class Tipos{
     }
 
     public void imprimir() {
-        if(tipo1!=null && tipo2!=null ){    
+        if(tipo1!=null && tipo2!=null )   
             System.out.println("Tipo 1: "+tipo1+"\nTipo 2: "+tipo2+"\n\nVantagens: ");
+        else if(tipo1!=null)
+            System.out.println("Tipo: "+tipo1+"\n\nVantagens: ");
+        else if(tipo2!=null)    
+            System.out.println("Tipo: "+tipo2+"\n\nVantagens: ");
             for(int i=0; i<vantagens.size(); i++){
-                System.out.println("\t"+vantagens.get(i));
+                if(vantagens.get(i)!="Inválido")   System.out.println(vantagens.get(i));
             }
             int verificador = 0;
             System.out.println("\nImune: ");
             for(int i=0; i<fraquezas.size(); i++){
                 if(fraquezas.get(i).getIdentificador()==1){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
+                    System.out.println(fraquezas.get(i).getTipo());
                     verificador++;
                 }
             }
             if (verificador==0) {
-                System.out.println("\tNenhum");
+                System.out.println("Nenhum");
             }
             verificador = 0;
             System.out.println("\nMuito resistente: ");
             for(int i=0; i<fraquezas.size(); i++){
                 if(fraquezas.get(i).getIdentificador()==2){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
+                    System.out.println(""+fraquezas.get(i).getTipo());
                     verificador++;
                 }
             }
             if (verificador==0) {
-                System.out.println("\tNenhum");
+                System.out.println("Nenhum");
             }
             verificador = 0;
             System.out.println("\nResistene: ");
             for(int i=0; i<fraquezas.size(); i++){
                 if(fraquezas.get(i).getIdentificador()==3){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
+                    System.out.println(""+fraquezas.get(i).getTipo());
                     verificador++;
                 }
             }
             if (verificador==0) {
-                System.out.println("\tNenhum");
+                System.out.println("Nenhum");
             }
             verificador = 0;
             System.out.println("\nNormal: ");
             for(int i=0; i<fraquezas.size(); i++){
                 if(fraquezas.get(i).getIdentificador()==4){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
+                    System.out.println(fraquezas.get(i).getTipo());
                     verificador++;
                 }
             }
             if (verificador==0) {
-                System.out.println("\tNenhum");
+                System.out.println("Nenhum");
             }
             verificador = 0;
             System.out.println("\nVulnerável: ");
             for(int i=0; i<fraquezas.size(); i++){
                 if(fraquezas.get(i).getIdentificador()==5){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
+                    System.out.println(fraquezas.get(i).getTipo());
                     verificador++;
                 }
             }
             if (verificador==0) {
-                System.out.println("\tNenhum");
+                System.out.println("Nenhum");
             }
             verificador = 0;
             System.out.println("\nMuito Vulnerável: ");
             for(int i=0; i<fraquezas.size(); i++){
                 if(fraquezas.get(i).getIdentificador()==6){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
+                    System.out.println(fraquezas.get(i).getTipo());
                     verificador++;
                 }
             }
             if (verificador==0) {
-                System.out.println("\tNenhum");
+                System.out.println("Nenhum");
             }
-        }
-        else if(tipo1!=null){    
-            System.out.println("Tipo: "+tipo1+"\nVantagens: ");
-            for(int i=0; i<vantagens.size(); i++){
-                System.out.println("\t"+vantagens.get(i));
-            }
-            int verificador = 0;
-            System.out.println("\nImune: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==1){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nMuito resistente: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==2){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nResistene: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==3){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nNormal: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==4){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nVulnerável: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==5){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nMuito Vulnerável: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==6){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-        }
-        else if(tipo2!=null){    
-            System.out.println("Tipo: "+tipo2+"\nVantagens: ");
-            for(int i=0; i<vantagens.size(); i++){
-                System.out.println("\t"+vantagens.get(i));
-            }
-            int verificador = 0;
-            System.out.println("\nImune: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==1){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nMuito resistente: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==2){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nResistene: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==3){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nNormal: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==4){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nVulnerável: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==5){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-            verificador = 0;
-            System.out.println("\nMuito Vulnerável: ");
-            for(int i=0; i<fraquezas.size(); i++){
-                if(fraquezas.get(i).getIdentificador()==6){
-                    System.out.println("\t"+fraquezas.get(i).getTipo());
-                    verificador++;
-                }
-            }
-            if (verificador==0) {
-                System.out.println("\tNenhum");
-            }
-        }
-
+        
     }
 }
