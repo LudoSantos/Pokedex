@@ -158,7 +158,7 @@ public class Estatisticas {
         if (ataqueEspecial > 0 && ataqueEspecial <= 200) {
             this.ataqueEspecial = ataqueEspecial;
         }
-        if (velocidade < 0 || velocidade > 200)
+        if (ataqueEspecial < 0 || ataqueEspecial > 200)
             while (i != 1) {
 
                 if (ataqueEspecial > 0 && ataqueEspecial <= 200) {
