@@ -13,6 +13,7 @@ public class Pokemon {
     private int id;
     private Estatisticas status = new Estatisticas(0, 0, 0, 0, 0, 0, null);
     private Tipos tipo = new Tipos(null, null);
+    private Ataque ataque;
 
     public float getAltura() {
         return altura;
@@ -117,7 +118,7 @@ public class Pokemon {
         this.id = id;
     }
 
-    public Pokemon(String nome, int level, float altura, float peso, int id, Estatisticas status, Tipos tipo) {
+    public Pokemon(String nome, int level, float altura, float peso, int id, Estatisticas status, Tipos tipo, Ataque ataque) {
         this.nome = nome;
         setLevel(level);
         setAltura(altura);
@@ -125,6 +126,7 @@ public class Pokemon {
         this.id = id;
         this.status = status;
         this.tipo = tipo;
+        this.ataque=ataque;
     }
 
     public Pokemon(String nome, int level) {
