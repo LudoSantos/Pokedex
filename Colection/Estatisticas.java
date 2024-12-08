@@ -19,10 +19,10 @@ public class Estatisticas {
 
     public void setPontosDeVida(int pontosDeVida) {
         int i = 0;
-        if (pontosDeVida > 0 && pontosDeVida <= 200){
+        if (pontosDeVida > 0 && pontosDeVida <= 200) {
             this.pontosDeVida = pontosDeVida;
         }
-        if ( pontosDeVida < 0 || pontosDeVida > 200 ) {
+        if (pontosDeVida < 0 || pontosDeVida > 200) {
             while (i != 1) {
 
                 if (pontosDeVida > 0 && pontosDeVida <= 200) {
@@ -47,10 +47,10 @@ public class Estatisticas {
 
     public void setDefesaEspecial(int defesaEspecial) {
         int i = 0;
-        if (defesaEspecial > 0 && defesaEspecial <= 200){
+        if (defesaEspecial > 0 && defesaEspecial <= 200) {
             this.defesaEspecial = defesaEspecial;
         }
-            if ( defesaEspecial < 0 || defesaEspecial > 200 ) 
+        if (defesaEspecial < 0 || defesaEspecial > 200)
             while (i != 1) {
 
                 if (defesaEspecial > 0 && defesaEspecial <= 200) {
@@ -66,18 +66,18 @@ public class Estatisticas {
                     scan.nextLine();
                 }
             }
-        }
+    }
 
     public int getDefesa() {
         return defesa;
     }
 
-    public void setDefesa( int defesa ) {
+    public void setDefesa(int defesa) {
         int i = 0;
-        if (defesa > 0 && defesa <= 200){
-            this.defesa = defesa; 
+        if (defesa > 0 && defesa <= 200) {
+            this.defesa = defesa;
         }
-        if ( defesa < 0 || defesa > 200 ) 
+        if (defesa < 0 || defesa > 200)
             while (i != 1) {
 
                 if (defesa > 0 && defesa <= 200) {
@@ -93,7 +93,7 @@ public class Estatisticas {
                     scan.nextLine();
                 }
             }
-        }
+    }
 
     public int getAtaque() {
         return ataque;
@@ -101,10 +101,10 @@ public class Estatisticas {
 
     public void setAtaque(int ataque) {
         int i = 0;
-        if (ataque > 0 && ataque <= 200){
+        if (ataque > 0 && ataque <= 200) {
             this.ataque = ataque;
         }
-            if ( ataque < 0 || ataque > 200 ) 
+        if (ataque < 0 || ataque > 200)
             while (i != 1) {
 
                 if (ataque > 0 && ataque <= 200) {
@@ -120,7 +120,7 @@ public class Estatisticas {
                     scan.nextLine();
                 }
             }
-        }
+    }
 
     public int getVelocidade() {
         return velocidade;
@@ -128,10 +128,10 @@ public class Estatisticas {
 
     public void setVelocidade(int velocidade) {
         int i = 0;
-        if (velocidade > 0 && velocidade <= 200){
+        if (velocidade > 0 && velocidade <= 200) {
             this.velocidade = velocidade;
         }
-            if ( velocidade < 0 || velocidade > 200 ) 
+        if (velocidade < 0 || velocidade > 200)
             while (i != 1) {
 
                 if (velocidade > 0 && velocidade <= 200) {
@@ -147,7 +147,7 @@ public class Estatisticas {
                     scan.nextLine();
                 }
             }
-        }
+    }
 
     public int getAtaqueEspecial() {
         return ataqueEspecial;
@@ -155,10 +155,10 @@ public class Estatisticas {
 
     public void setAtaqueEspecial(int ataqueEspecial) {
         int i = 0;
-        if (ataqueEspecial > 0 && ataqueEspecial <= 200){
+        if (ataqueEspecial > 0 && ataqueEspecial <= 200) {
             this.ataqueEspecial = ataqueEspecial;
         }
-        if ( velocidade < 0 || velocidade > 200 ) 
+        if (velocidade < 0 || velocidade > 200)
             while (i != 1) {
 
                 if (ataqueEspecial > 0 && ataqueEspecial <= 200) {
@@ -174,7 +174,7 @@ public class Estatisticas {
                     scan.nextLine();
                 }
             }
-        }
+    }
 
     public Estatisticas(int pontosDeVida, int defesaEspecial, int ataqueEspecial, int defesa, int ataque,
             int velocidade, String dexEntry) {
@@ -189,10 +189,10 @@ public class Estatisticas {
 
     @Override
     public String toString() {
-        return "Estatisticas:\nPontosDeVida = " + pontosDeVida + "\nDefesaEspecial = " + defesaEspecial + "\nAtaqueEspecial = "
+        return "\nEstatisticas:\nPontosDeVida = " + pontosDeVida + "\nDefesaEspecial = " + defesaEspecial
+                + "\nAtaqueEspecial = "
                 + ataqueEspecial + "\nDefesa = " + defesa + "\nAtaque = " + ataque + "\nVelocidade = " + velocidade
-                + "\nDexEntry = " + DexEntry ;
+                + "\nDexEntry = " + DexEntry;
     }
 
-    
 }
