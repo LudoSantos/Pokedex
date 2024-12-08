@@ -13,7 +13,9 @@ public class main {
                 "Pokemon veloz que adora voar pelos áres de alola.");
 
         Tipos tipo = new Tipos("Pedra", "Voador");
-        Pokemon pokemon1 = new Pokemon("Passaro", 20, 2, 40, 0, estatisticas, tipo);
+        Ataque ataque = new Ataque("Tackle", 40, "Normal", 35, tipo);
+    
+        Pokemon pokemon1 = new Pokemon("Passaro", 20, 2, 40, estatisticas, tipo, ataque);
         System.out.println(pokemon1.toString());
 
         Pokemon evolucao = new Pokemon("Passaro Grande", 30);
